@@ -7,4 +7,15 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+    <PackageReference Include="Fluent.Ribbon" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="$([System.IO.Directory]::GetFiles('$(ProjectDir)Images\', '*.png', SearchOption.AllDirectories))">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
 </Project>
