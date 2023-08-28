@@ -9,7 +9,11 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.1" />
+    <PackageReference Include="DevExpress.Mvvm" Version="23.1.4" />
+    <PackageReference Include="DevExpress.Wpf.Core" Version="23.1.4" />
     <PackageReference Include="Fluent.Ribbon" Version="10.0.3" />
+    <PackageReference Include="NReco.VideoInfo" Version="1.2.0" />
+    <PackageReference Include="SevenZipExtractor" Version="1.0.17" />
   </ItemGroup>
 
   <ItemGroup>

@@ -8,11 +8,9 @@ namespace MultiMediaFinder.Views;
 /// </summary>
 public partial class MainWindow : Window
 {
-    private readonly MainWindowViewModel ViewModel;
-
     public MainWindow()
     {
-        DataContext = ViewModel = new MainWindowViewModel();
+        DataContext = new MainWindowViewModel();
         InitializeComponent();
     }
 

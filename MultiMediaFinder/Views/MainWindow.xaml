@@ -10,28 +10,27 @@
         d:DataContext="{d:DesignInstance Type=models:MainWindowViewModel}"
         Title="Multimedia Finder" Height="450" Width="800">
     <Window.Resources>
-        <BitmapImage x:Key="OptionsIcon" UriSource="/Images/options.png" />
         <BitmapImage x:Key="QuitIcon" UriSource="/Images/quit.png" />
         <BitmapImage x:Key="CreateIcon" UriSource="/Images/create.png" />
-        <BitmapImage x:Key="OpenIcon" UriSource="/Images/open.png" />
-        <BitmapImage x:Key="SaveIcon" UriSource="/Images/save.png" />
-        <BitmapImage x:Key="SaveAsIcon" UriSource="/Images/save-as.png" />
         <BitmapImage x:Key="CloseIcon" UriSource="/Images/close.png" />
         <BitmapImage x:Key="CancelIcon" UriSource="/Images/cancel.png" />
     </Window.Resources>
-    
-    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+
+    <Grid Margin="5" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Fluent:Ribbon Grid.Row="0">
+        <Fluent:Ribbon Grid.ColumnSpan="2" VerticalAlignment="Center">
             <Fluent:Ribbon.Menu>
                 <Fluent:Backstage>
                     <Fluent:BackstageTabControl>
-                        <Fluent:Button Header="Options" Icon="{StaticResource OptionsIcon}" />
-                        <Fluent:Button Header="Exit" Icon="{StaticResource QuitIcon}" x:Name="QuitButton" Click="QuitButton_OnClick" />
+                        <Fluent:Button Header="Exit" Icon="{StaticResource QuitIcon}" x:Name="QuitButton" Click="QuitButton_OnClick" Fluent:KeyTip.Keys="X"  />
                     </Fluent:BackstageTabControl>
                 </Fluent:Backstage>
             </Fluent:Ribbon.Menu>
@@ -40,21 +39,20 @@
             <Fluent:RibbonTabItem Header="Home" Fluent:KeyTip.Keys="H" >
                 <Fluent:RibbonGroupBox x:Name="Workspace" Header="Workspace">
                     <Fluent:Button Icon="{StaticResource CreateIcon}" Header="Create" Fluent:KeyTip.Keys="C" Command="{Binding CreateWorkspaceClickCommand}" />
-                    <Fluent:Button Icon="{StaticResource OpenIcon}" Header="Open ..." Fluent:KeyTip.Keys="O" Command="{Binding OpenWorkspaceClickCommand}" IsEnabled="False" />
-                    <Fluent:Button Icon="{StaticResource SaveIcon}" Header="Save" Fluent:KeyTip.Keys="S" IsEnabled="False" />
-                    <Fluent:Button Icon="{StaticResource SaveAsIcon}" Header="Save as ..." Fluent:KeyTip.Keys="A" IsEnabled="False" />
                     <Fluent:Button Icon="{StaticResource CloseIcon}" Header="Close" Fluent:KeyTip.Keys="Q" Command="{Binding CloseWorkspaceCommand}" />
+                    <Fluent:Button Icon="{StaticResource CancelIcon}" Header="Cancel" Fluent:KeyTip.Keys="X" Command="{Binding CreateWorkspaceClickCancelCommand}" />
+                </Fluent:RibbonGroupBox>
+                <Fluent:RibbonGroupBox>
+                    <Fluent:Button Icon="{StaticResource CreateIcon}" Header="Search" Fluent:KeyTip.Keys="S" Command="{Binding StartAnalysisCommand}" />
                 </Fluent:RibbonGroupBox>
             </Fluent:RibbonTabItem>
         </Fluent:Ribbon>
 
         <DataGrid Grid.Row="1"
-                  VerticalAlignment="Stretch" HorizontalAlignment="Stretch"
                   CanUserAddRows="False"
                   CanUserDeleteRows="False"
                   CanUserReorderColumns="True"
                   CanUserResizeColumns="True"
-                  CanUserSortColumns="True">
-        </DataGrid>
+                  CanUserSortColumns="True" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>

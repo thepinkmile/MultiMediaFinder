@@ -5,4 +5,5 @@
 
 using System.Diagnostics.CodeAnalysis;
 
-[assembly: SuppressMessage("CommunityToolkit.Mvvm.SourceGenerators.ObservableObjectGenerator", "MVVMTK0033:Inherit from ObservableObject instead of using [ObservableObject]", Justification = "<Pending>", Scope = "type", Target = "~T:MultiMediaFinder.ViewModels.MainWindowViewModel")]
+[assembly: SuppressMessage("CommunityToolkit.Mvvm.SourceGenerators.ObservableObjectGenerator", "MVVMTK0033:Inherit from ObservableObject instead of using [ObservableObject]", Justification = "Looks better and allows for future use of other inheritance options.", Scope = "type", Target = "~T:MultiMediaFinder.ViewModels.MainWindowViewModel")]
+[assembly: SuppressMessage("CommunityToolkit.Mvvm.SourceGenerators.ObservableObjectGenerator", "MVVMTK0033:Inherit from ObservableObject instead of using [ObservableObject]", Justification = "Looks better and allows for future use of other inheritance options.", Scope = "type", Target = "~T:MultiMediaFinder.ViewModels.AnalysisConfigDialogViewModel")]

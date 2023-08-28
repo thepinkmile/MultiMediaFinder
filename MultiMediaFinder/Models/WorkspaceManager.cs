@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace MultiMediaFinder.Models;
 
-public class Workspace
+public class WorkspaceManager
 {
     public readonly string WorkspaceId = Guid.NewGuid().ToString();
 
